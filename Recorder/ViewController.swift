@@ -28,7 +28,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         if !isRecording {
 
             let session = AVAudioSession.sharedInstance()
-            try! session.setCategory(AVAudioSession.Category.playAndRecord)
+            try! session.setCategory(AVAudioSession.Category.playAndRecord, options: .mixWithOthers)
             try! session.setActive(true)
 
             let settings = [
